@@ -7,6 +7,7 @@ Prepares raw data and provides training and test datasets.
 import argparse
 from pathlib import Path
 import os
+import logging
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
