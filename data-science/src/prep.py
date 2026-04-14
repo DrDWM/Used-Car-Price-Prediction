@@ -63,7 +63,8 @@ def main(args):  # Write the function name for the main data preparation logic
     # Log completion of the run
     mlflow.log_metric("train_size", len(train_df))
     mlflow.log_metric("test_size", len(test_df))
-    
+
+    # Here's my update to the prep file, which I will commit to the GitHub repo to validata the CI/CD implementation
 
 if __name__ == "__main__":
     mlflow.start_run()
