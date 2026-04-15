@@ -59,7 +59,7 @@ def main(args):
     # Step 4: Initialize the RandomForest Regressor with specified hyperparameters, and train the model using the training data.
 
     # Initialize and train a random forest regressor, assigning a random_state value for reproducibility
-    # First, convert the sentinel value of -1 for max_depth to None if it is in args.max_depth
+    # First, convert the sentinel value of -1 for max_depth to None if args.max_depth= -1
     max_depth = args.max_depth
     if max_depth == -1:
         max_depth = None
@@ -104,7 +104,7 @@ if __name__ == "__main__":
         f"Test dataset input path: {args.test_data}",
         f"Model output path: {args.model_output}",
         f"Number of Estimators: {args.n_estimators}",
-        f"Max Depth: max_depth}"  # use max_depth instead of args.max_depth to capture the actual value used (due to use of sentinel value = -1 to represent None)
+        f"Max Depth: {max_depth}"  # use max_depth instead of args.max_depth to capture the actual value used (due to use of sentinel value = -1 to represent None)
     ]
 
     for line in lines:
