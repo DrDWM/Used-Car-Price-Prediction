@@ -58,7 +58,7 @@ jobs:
         values: [10, 30, 75, 100, 150]
       max_depth:
         type: choice  # Specify the type for max_depth
-        values: [3, 5, 7, 10]  # Provide the values for max_depth
+        values: [3, 5, 7, None]  # Provide the values for max_depth
     objective:
       goal: minimize
       primary_metric: MSE
