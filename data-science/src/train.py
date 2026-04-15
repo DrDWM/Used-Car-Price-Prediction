@@ -72,7 +72,7 @@ def main(args):
     # Log model hyperparameters
     mlflow.log_param("model", "RandomForestRegressor")  # Provide the model name
     mlflow.log_param("n_estimators", args.n_estimators)
-    mlflow.log_param("max_depth", args.max_depth)
+    mlflow.log_param("max_depth", max_depth)  # use max_depth instead of args.max_depth to capture the actual value sent to Python as captured above in max_depth=args.max_depth, etc.
 
     
     # Step 6: Predict target values on the test dataset using the trained model, and calculate the mean squared error.
@@ -104,7 +104,7 @@ if __name__ == "__main__":
         f"Test dataset input path: {args.test_data}",
         f"Model output path: {args.model_output}",
         f"Number of Estimators: {args.n_estimators}",
-        f"Max Depth: {args.max_depth}"
+        f"Max Depth: max_depth}"  # use max_depth instead of args.max_depth to capture the actual value used (due to use of sentinel value = -1 to represent None)
     ]
 
     for line in lines:
