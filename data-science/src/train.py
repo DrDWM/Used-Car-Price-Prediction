@@ -99,7 +99,7 @@ if __name__ == "__main__":
     # Parse Arguments
     args = parse_args()
 
-    # convert the sentinel value of -1 to None if args.max_depth = -1
+    # convert the sentinel value of -1 to None if args.max_depth = -1 for purposes of logging (below)
     max_depth = args.max_depth
     if max_depth == -1:
         max_depth = None
