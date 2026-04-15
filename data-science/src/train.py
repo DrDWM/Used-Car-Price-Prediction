@@ -59,7 +59,11 @@ def main(args):
     # Step 4: Initialize the RandomForest Regressor with specified hyperparameters, and train the model using the training data.
 
     # Initialize and train a random forest regressor, assigning a random_state value for reproducibility
-    rfr_model = RandomForestRegressor(n_estimators=args.n_estimators, max_depth=args.max_depth, random_state=42)
+    # First, convert the sentinel value of -1 for max_depth to None if it is in args.max_depth
+    max_depth = args.max_depth
+    if max_depth == -1:
+        max_depth = None
+    rfr_model = RandomForestRegressor(n_estimators=args.n_estimators, max_depth=max_depth, random_state=42)
     rfr_model.fit(X_train, y_train)
 
     
