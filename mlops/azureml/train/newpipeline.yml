@@ -58,7 +58,7 @@ jobs:
         values: [10, 30, 75, 100, 150]
       max_depth:
         type: choice  # Specify the type for max_depth
-        values: [3, 5, 7, null]  # Provide the values for max_depth
+        values: [3, 5, 7, -1]  # Provide the values for max_depth - using -1 as a sentinel value that gets converted to None in the Python script because AzureML doesn not handle null->None
     objective:
       goal: minimize
       primary_metric: MSE
